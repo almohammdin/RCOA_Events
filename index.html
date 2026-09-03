@@ -9,10 +9,15 @@
   <meta property="og:locale" content="ar_SA">
   <meta property="og:site_name" content="جمعية ملاك المطاعم والمقاهي">
   <meta property="og:title" content="فعاليات جمعية ملاك المطاعم والمقاهي">
-  <meta property="og:description" content="سجل في لقاءات الجمعية، تابع حالة مقعدك، وأكمل السداد بسهولة.">
+  <meta property="og:description" content="سجل في لقاءات ودورات ورحلات الجمعية، تابع حالة مقعدك، وأكمل السداد بسهولة.">
   <meta property="og:image" content="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg">
   <meta property="og:url" content="https://almohammdin.github.io/RCOA_Events/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="فعاليات جمعية ملاك المطاعم والمقاهي">
+  <meta name="twitter:description" content="سجل في لقاءات ودورات ورحلات الجمعية وتابع حالة تسجيلك.">
+  <meta name="twitter:image" content="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg">
+  <link rel="icon" type="image/jpeg" href="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg">
+  <link rel="apple-touch-icon" href="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg">
   <title>فعاليات جمعية ملاك المطاعم والمقاهي</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +46,7 @@
         <div class="hero-copy">
           <span class="eyebrow">مجتمع الضيافة</span>
           <h1>فعاليات جمعية ملاك<br>المطاعم والمقاهي</h1>
-          <p>سجل للقاءات الجمعية، تابع حالة مقعدك، وأكمل السداد من مكان واحد.</p>
+          <p>سجل للقاءات والدورات والرحلات، تابع حالة مقعدك، وأكمل السداد من مكان واحد.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#events">استعرض الفعاليات</a>
             <button class="btn btn-secondary" data-action="manage-registration">إدارة تسجيلي</button>
@@ -50,7 +55,7 @@
         <aside class="hero-panel" aria-label="خطوات التسجيل">
           <div class="hero-panel-top"><span>تجربة أبسط</span><strong>3 خطوات</strong></div>
           <ol class="steps">
-            <li><b>1</b><div><strong>اختر اللقاء</strong><span>اطلع على التفاصيل والمقاعد</span></div></li>
+            <li><b>1</b><div><strong>اختر المناسبة</strong><span>اطلع على التفاصيل والمقاعد</span></div></li>
             <li><b>2</b><div><strong>سجل بياناتك</strong><span>نحفظ لك المقعد خلال مهلة السداد</span></div></li>
             <li><b>3</b><div><strong>أكمل السداد</strong><span>تابع رابط MyFatoorah وحالة تسجيلك</span></div></li>
           </ol>
@@ -62,7 +67,7 @@
       <div class="container">
         <div class="section-heading">
           <div><span class="eyebrow">القادم</span><h2>الفعاليات واللقاءات</h2></div>
-          <p>اختر الفعالية المناسبة وسجل مقعدك مباشرة.</p>
+          <p>اختر المناسبة المناسبة وسجل مقعدك مباشرة.</p>
         </div>
         <div id="eventsGrid" class="events-grid"></div>
         <div id="eventsEmpty" class="empty-state" hidden>
@@ -82,12 +87,19 @@
         <a class="btn btn-dark" href="https://linktr.ee/rcoa.sa" target="_blank" rel="noopener">روابط الجمعية</a>
       </div>
     </section>
-  </main>
 
-  <button class="suggestion-fab" data-action="suggestion" aria-label="إرسال اقتراح" title="اقتراح">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.2 12.6c.75.56 1.2 1.2 1.2 1.9V18h6v-1.5c0-.7.45-1.34 1.2-1.9A7 7 0 0 0 12 2Zm-1 20h2a2 2 0 0 0 2-2H9a2 2 0 0 0 2 2Zm1-18a5 5 0 0 1 3 9c-1.3.97-2 2.18-2 3h-2c0-.82-.7-2.03-2-3a5 5 0 0 1 3-9Z"/></svg>
-    <span>اقتراح</span>
-  </button>
+    <section class="suggestion-section">
+      <div class="container">
+        <div class="suggestion-card">
+          <span class="suggestion-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.2 12.6c.75.56 1.2 1.2 1.2 1.9V18h6v-1.5c0-.7.45-1.34 1.2-1.9A7 7 0 0 0 12 2Zm-1 20h2a2 2 0 0 0 2-2H9a2 2 0 0 0 2 2Zm1-18a5 5 0 0 1 3 9c-1.3.97-2 2.18-2 3h-2c0-.82-.7-2.03-2-3a5 5 0 0 1 3-9Z"/></svg>
+          </span>
+          <div><strong>اقترح مناسبة</strong><span>اقترح لقاء، دورة، زيارة أو رحلة. يصل اقتراحك إلى الإدارة فقط.</span></div>
+          <button class="btn btn-secondary compact" data-action="suggestion">إرسال اقتراح</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -100,12 +112,20 @@
         <a href="https://linktr.ee/rcoa.sa" target="_blank" rel="noopener">روابط الجمعية</a>
         <a href="mailto:info@rcoa.sa">info@rcoa.sa</a>
       </div>
-      <div class="naif-signature">
-        <img src="https://raw.githubusercontent.com/almohammdin/Cafe-Show-Seoul2026/main/naif.webp" alt="نايف المحمدي">
-        <div><span class="signature-mark">نايف المحمدي</span><small>مستشار الحوكمة وتطوير الأعمال | عضو مجلس إدارة الجمعية</small><a href="https://www.snapchat.com/add/almohammdin" target="_blank" rel="noopener">@almohammdin</a></div>
+      <div class="naif-signature compact-signature">
+        <img src="https://raw.githubusercontent.com/almohammdin/mycv/main/naif-logo.svg" alt="شعار نايف المحمدي">
+        <div>
+          <span class="signature-mark">إعداد نايف المحمدي</span>
+          <div class="signature-links">
+            <a href="https://almohammdin.github.io/mycv/" target="_blank" rel="noopener">الموقع</a>
+            <a href="https://www.linkedin.com/in/almohammdin/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://x.com/almohammdin" target="_blank" rel="noopener">X</a>
+            <a href="https://linktr.ee/almohammdin" target="_blank" rel="noopener">الحسابات</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container footer-bottom"><span>© جمعية ملاك المطاعم والمقاهي</span><span>الإصدار 0.1.0</span></div>
+    <div class="container footer-bottom"><span>© جمعية ملاك المطاعم والمقاهي</span><span>الإصدار 0.2.0</span></div>
   </footer>
 
   <div class="modal" id="eventModal" aria-hidden="true">
@@ -152,8 +172,8 @@
     <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="suggestionTitle">
       <button class="modal-close" data-close aria-label="إغلاق">×</button>
       <div class="suggestion-icon-large"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.2 12.6c.75.56 1.2 1.2 1.2 1.9V18h6v-1.5c0-.7.45-1.34 1.2-1.9A7 7 0 0 0 12 2Zm-1 20h2a2 2 0 0 0 2-2H9a2 2 0 0 0 2 2Z"/></svg></div>
-      <h2 id="suggestionTitle">عندك اقتراح؟</h2>
-      <p class="muted">يفتح نموذج الجمعية الرسمي، ويصل اقتراحك إلى الإدارة فقط ولا يظهر للمشاركين.</p>
+      <h2 id="suggestionTitle">اقترح مناسبة</h2>
+      <p class="muted">يفتح نموذج الجمعية، ويصل اقتراحك إلى الإدارة فقط ولا يظهر للمشاركين.</p>
       <a class="btn btn-primary full" href="https://docs.google.com/forms/d/e/1FAIpQLSeOh-2IDRUmDtlxD0l7jFsbHYQpnuhbfrYQhMT13jwCc3_vHw/viewform?usp=preview" target="_blank" rel="noopener">إرسال اقتراح للإدارة</a>
     </section>
   </div>
