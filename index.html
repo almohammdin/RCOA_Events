@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1f4649">
+  <meta name="description" content="منصة فعاليات جمعية ملاك المطاعم والمقاهي للتسجيل وإدارة المقاعد والسداد.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:site_name" content="جمعية ملاك المطاعم والمقاهي">
+  <meta property="og:title" content="فعاليات جمعية ملاك المطاعم والمقاهي">
+  <meta property="og:description" content="سجل في لقاءات الجمعية، تابع حالة مقعدك، وأكمل السداد بسهولة.">
+  <meta property="og:image" content="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg">
+  <meta property="og:url" content="https://almohammdin.github.io/RCOA_Events/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>فعاليات جمعية ملاك المطاعم والمقاهي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="الرئيسية">
+        <img src="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg" alt="شعار جمعية ملاك المطاعم والمقاهي">
+        <span><strong>جمعية ملاك المطاعم والمقاهي</strong><small>منصة الفعاليات</small></span>
+      </a>
+      <nav class="header-actions" aria-label="إجراءات">
+        <button class="btn btn-ghost compact" data-action="manage-registration">إدارة تسجيلي</button>
+        <button class="icon-btn admin-entry" data-action="admin-login" title="دخول الإدارة" aria-label="دخول الإدارة">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-3 9v2H7a3 3 0 0 0-3 3v5h16v-5a3 3 0 0 0-3-3h-2v-2a5 5 0 0 0-3-9Zm0 2a3 3 0 0 1 3 3v2H9V7a3 3 0 0 1 3-3Zm-5 11h10a1 1 0 0 1 1 1v3H6v-3a1 1 0 0 1 1-1Z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">مجتمع الضيافة</span>
+          <h1>فعاليات جمعية ملاك<br>المطاعم والمقاهي</h1>
+          <p>سجل للقاءات الجمعية، تابع حالة مقعدك، وأكمل السداد من مكان واحد.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#events">استعرض الفعاليات</a>
+            <button class="btn btn-secondary" data-action="manage-registration">إدارة تسجيلي</button>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="خطوات التسجيل">
+          <div class="hero-panel-top"><span>تجربة أبسط</span><strong>3 خطوات</strong></div>
+          <ol class="steps">
+            <li><b>1</b><div><strong>اختر اللقاء</strong><span>اطلع على التفاصيل والمقاعد</span></div></li>
+            <li><b>2</b><div><strong>سجل بياناتك</strong><span>نحفظ لك المقعد خلال مهلة السداد</span></div></li>
+            <li><b>3</b><div><strong>أكمل السداد</strong><span>تابع رابط MyFatoorah وحالة تسجيلك</span></div></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="events-section" id="events">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">القادم</span><h2>الفعاليات واللقاءات</h2></div>
+          <p>اختر الفعالية المناسبة وسجل مقعدك مباشرة.</p>
+        </div>
+        <div id="eventsGrid" class="events-grid"></div>
+        <div id="eventsEmpty" class="empty-state" hidden>
+          <strong>لا توجد فعاليات منشورة حاليًا</strong>
+          <span>ستظهر الفعاليات الجديدة هنا عند نشرها.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="container community-card">
+        <div>
+          <span class="eyebrow">مجتمعات الجمعية</span>
+          <h2>ابق على اتصال بعالم الضيافة</h2>
+          <p>تابع قنوات الجمعية ومجتمعاتها وتقاريرها من خلال الصفحة الرسمية.</p>
+        </div>
+        <a class="btn btn-dark" href="https://linktr.ee/rcoa.sa" target="_blank" rel="noopener">روابط الجمعية</a>
+      </div>
+    </section>
+  </main>
+
+  <button class="suggestion-fab" data-action="suggestion" aria-label="إرسال اقتراح" title="اقتراح">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.2 12.6c.75.56 1.2 1.2 1.2 1.9V18h6v-1.5c0-.7.45-1.34 1.2-1.9A7 7 0 0 0 12 2Zm-1 20h2a2 2 0 0 0 2-2H9a2 2 0 0 0 2 2Zm1-18a5 5 0 0 1 3 9c-1.3.97-2 2.18-2 3h-2c0-.82-.7-2.03-2-3a5 5 0 0 1 3-9Z"/></svg>
+    <span>اقتراح</span>
+  </button>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-association">
+        <img src="https://ugc.production.linktr.ee/35b3d4bf-154e-4d23-9291-8b4de0493339_IMG-1673.jpeg" alt="شعار الجمعية">
+        <div><strong>جمعية ملاك المطاعم والمقاهي</strong><span>رقم الترخيص 5109</span><span>المملكة العربية السعودية · جدة</span></div>
+      </div>
+      <div class="footer-links">
+        <a href="https://rcoa.sa" target="_blank" rel="noopener">rcoa.sa</a>
+        <a href="https://linktr.ee/rcoa.sa" target="_blank" rel="noopener">روابط الجمعية</a>
+        <a href="mailto:info@rcoa.sa">info@rcoa.sa</a>
+      </div>
+      <div class="naif-signature">
+        <img src="https://raw.githubusercontent.com/almohammdin/Cafe-Show-Seoul2026/main/naif.webp" alt="نايف المحمدي">
+        <div><span class="signature-mark">نايف المحمدي</span><small>مستشار الحوكمة وتطوير الأعمال | عضو مجلس إدارة الجمعية</small><a href="https://www.snapchat.com/add/almohammdin" target="_blank" rel="noopener">@almohammdin</a></div>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© جمعية ملاك المطاعم والمقاهي</span><span>الإصدار 0.1.0</span></div>
+  </footer>
+
+  <div class="modal" id="eventModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card wide" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <div id="eventModalBody"></div>
+    </section>
+  </div>
+
+  <div class="modal" id="registrationModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="registrationTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <span class="eyebrow">تسجيل المقعد</span><h2 id="registrationTitle">بيانات التسجيل</h2>
+      <p class="muted" id="registrationEventName"></p>
+      <form id="registrationForm" class="form-grid">
+        <input type="hidden" id="registrationEventId">
+        <label>الاسم الكامل<input id="regName" required autocomplete="name" maxlength="80"></label>
+        <label>رقم الجوال<input id="regPhone" required inputmode="tel" autocomplete="tel" placeholder="05xxxxxxxx" maxlength="20" dir="ltr"></label>
+        <label>المنشأة<input id="regCompany" autocomplete="organization" maxlength="80" placeholder="اختياري"></label>
+        <label>المدينة<input id="regCity" maxlength="50" placeholder="مثال: جدة"></label>
+        <label class="check-row"><input id="regTerms" type="checkbox" required><span>أوافق على استخدام بياناتي لإدارة التسجيل والتواصل بشأن هذه الفعالية.</span></label>
+        <button class="btn btn-primary full" type="submit">تأكيد التسجيل</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal" id="manageModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card wide" role="dialog" aria-modal="true" aria-labelledby="manageTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <span class="eyebrow">تسجيلاتي</span><h2 id="manageTitle">إدارة تسجيلي</h2>
+      <form id="manageSearchForm" class="inline-form">
+        <label><span>رقم الجوال</span><input id="managePhone" required inputmode="tel" placeholder="05xxxxxxxx" dir="ltr"></label>
+        <button class="btn btn-primary" type="submit">عرض التسجيلات</button>
+      </form>
+      <div id="manageResults" class="manage-results"></div>
+    </section>
+  </div>
+
+  <div class="modal" id="suggestionModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="suggestionTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <div class="suggestion-icon-large"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.2 12.6c.75.56 1.2 1.2 1.2 1.9V18h6v-1.5c0-.7.45-1.34 1.2-1.9A7 7 0 0 0 12 2Zm-1 20h2a2 2 0 0 0 2-2H9a2 2 0 0 0 2 2Z"/></svg></div>
+      <h2 id="suggestionTitle">عندك اقتراح؟</h2>
+      <p class="muted">يفتح نموذج الجمعية الرسمي، ويصل اقتراحك إلى الإدارة فقط ولا يظهر للمشاركين.</p>
+      <a class="btn btn-primary full" href="https://docs.google.com/forms/d/e/1FAIpQLSeOh-2IDRUmDtlxD0l7jFsbHYQpnuhbfrYQhMT13jwCc3_vHw/viewform?usp=preview" target="_blank" rel="noopener">إرسال اقتراح للإدارة</a>
+    </section>
+  </div>
+
+  <div class="modal" id="adminLoginModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <span class="eyebrow">الإدارة</span><h2 id="adminLoginTitle">دخول الإدارة</h2>
+      <form id="adminLoginForm" class="form-grid">
+        <label>رمز الدخول<input id="adminPin" required type="password" inputmode="numeric" autocomplete="current-password"></label>
+        <button class="btn btn-dark full" type="submit">دخول</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal admin-modal" id="adminModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card admin-card" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <div class="admin-head"><div><span class="eyebrow">لوحة التحكم</span><h2 id="adminTitle">إدارة الفعاليات</h2></div><button class="btn btn-primary" id="newEventBtn">+ فعالية جديدة</button></div>
+      <div id="adminStats" class="stats-grid"></div>
+      <div class="admin-tabs" role="tablist"><button class="active" data-admin-tab="events">الفعاليات</button><button data-admin-tab="registrations">المسجلون</button><button data-admin-tab="integration">السداد والربط</button></div>
+      <div id="adminContent"></div>
+    </section>
+  </div>
+
+  <div class="modal" id="eventEditorModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card wide" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+      <button class="modal-close" data-close aria-label="إغلاق">×</button>
+      <span class="eyebrow">الإدارة</span><h2 id="editorTitle">إضافة فعالية</h2>
+      <form id="eventEditorForm" class="form-grid two-cols">
+        <input id="editEventId" type="hidden">
+        <label class="span-2">عنوان الفعالية<input id="editTitle" required maxlength="120"></label>
+        <label class="span-2">وصف مختصر<textarea id="editDescription" required rows="3" maxlength="350"></textarea></label>
+        <label>التاريخ<input id="editDate" type="date" required></label>
+        <label>المدينة<input id="editCity" required maxlength="50"></label>
+        <label>وقت البداية<input id="editStart" type="time" required></label>
+        <label>وقت النهاية<input id="editEnd" type="time" required></label>
+        <label>المكان<input id="editVenue" required maxlength="100"></label>
+        <label>رابط الموقع<input id="editMap" type="url" placeholder="https://..."></label>
+        <label>السعر SAR<input id="editPrice" type="number" min="0" step="1" required></label>
+        <label>عدد المقاعد<input id="editCapacity" type="number" min="1" step="1" required></label>
+        <label>مهلة السداد بالساعات<input id="editPaymentHours" type="number" min="1" max="168" step="1" required></label>
+        <label class="toggle-row"><input id="editPublished" type="checkbox"><span>نشر الفعالية للعامة</span></label>
+        <label class="toggle-row span-2"><input id="editShowParticipants" type="checkbox"><span>إظهار أسماء المشاركين المؤكدين للعامة</span></label>
+        <button class="btn btn-primary span-2" type="submit">حفظ الفعالية</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
