@@ -2,43 +2,79 @@
   'use strict';
 
   const STORAGE_KEY = 'rcoa_events_state_v2';
-  const MIGRATION_KEY = 'rcoa_events_demo_seed_v3';
+  const MIGRATION_KEY = 'rcoa_events_demo_seed_v4';
   const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeOh-2IDRUmDtlxD0l7jFsbHYQpnuhbfrYQhMT13jwCc3_vHw/viewform?usp=preview';
+  const BASE_URL = 'https://almohammdin.github.io/RCOA_Events/';
+
+  const now = Date.now();
+  const demoState = {
+    events: [
+      {id:'restaurant',title:'عشاء ملاك المطاعم: تجارب التشغيل والنمو',description:'عشاء مهني غير رسمي يجمع ملاك المطاعم لتبادل تجارب التشغيل والتوسع والموردين وتحديات السوق.',date:'2026-09-12',start:'20:00',end:'22:30',city:'جدة',venue:'مطعم الدار',mapUrl:'',price:95,capacity:12,paymentWindowHours:6,published:true,showParticipants:true,sharePath:'events/restaurant.html'},
+      {id:'cafe',title:'لقاء ملاك المقاهي: من المنتج إلى تجربة العميل',description:'جلسة عملية حول تجربة العميل والقائمة والتسعير وجودة المنتج وقراءة سلوك الزوار.',date:'2026-09-19',start:'19:30',end:'21:30',city:'جدة',venue:'مقهى الساحة',mapUrl:'',price:60,capacity:5,paymentWindowHours:6,published:true,showParticipants:true,sharePath:'events/cafe.html'},
+      {id:'course',title:'دورة قراءة أرقام المطعم واتخاذ القرار',description:'دورة تطبيقية لأصحاب ومديري المنشآت لفهم أهم مؤشرات التشغيل وتحويل الأرقام إلى قرارات.',date:'2026-09-24',start:'17:00',end:'20:30',city:'جدة',venue:'قاعة الجمعية',mapUrl:'',price:180,capacity:16,paymentWindowHours:12,published:true,showParticipants:false,sharePath:'events/course.html'},
+      {id:'taif',title:'رحلة الضيافة المحلية إلى الطائف',description:'زيارة يوم واحد لعدد من تجارب المطاعم والمقاهي مع لقاءات أصحاب المشاريع وتبادل الخبرات.',date:'2026-10-03',start:'08:00',end:'20:00',city:'الطائف',venue:'نقطة التجمع تعلن للمسجلين',mapUrl:'',price:220,capacity:30,paymentWindowHours:12,published:true,showParticipants:false,sharePath:'events/taif.html'},
+      {id:'riyadh',title:'الرحلة الدورية لملاك القطاع، الرياض',description:'برنامج دوري يجمع الزيارات الميدانية واللقاءات المهنية والتعرف على تجارب تشغيلية مختلفة.',date:'2026-10-15',start:'09:00',end:'22:00',city:'الرياض',venue:'مواقع متعددة',mapUrl:'',price:350,capacity:35,paymentWindowHours:18,published:true,showParticipants:false,sharePath:'events/riyadh.html'},
+      {id:'summer',title:'رحلة صيف الضيافة',description:'رحلة صيفية مهنية واجتماعية تشمل زيارات وتجارب ضيافة محلية ولقاءات مع أصحاب منشآت المنطقة.',date:'2027-07-08',start:'07:30',end:'21:30',city:'أبها',venue:'برنامج الرحلة يعلن لاحقًا',mapUrl:'',price:450,capacity:40,paymentWindowHours:24,published:true,showParticipants:false,sharePath:'events/summer.html'}
+    ],
+    registrations: [
+      {id:'r1',eventId:'restaurant',name:'سلمان أحمد',phone:'+966500000001',company:'مطعم شرفة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T10:00:00.000Z'},
+      {id:'r2',eventId:'restaurant',name:'خالد العتيبي',phone:'+966500000002',company:'شركة مذاق',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T10:10:00.000Z'},
+      {id:'r3',eventId:'restaurant',name:'ريم الحربي',phone:'+966500000003',company:'مطاعم المدينة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T10:20:00.000Z'},
+      {id:'r4',eventId:'restaurant',name:'عبدالله الزهراني',phone:'+966500000004',company:'بيت النكهة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T10:30:00.000Z'},
+      {id:'r5',eventId:'restaurant',name:'مشعل الغامدي',phone:'+966500000005',company:'',city:'جدة',status:'pending_payment',paymentDeadline:new Date(now+5*3600000).toISOString(),paymentUrl:'',createdAt:new Date(now-45*60000).toISOString()},
+
+      {id:'c1',eventId:'cafe',name:'فهد محمد',phone:'+966500000011',company:'مقهى نواة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:00:00.000Z'},
+      {id:'c2',eventId:'cafe',name:'نورة السالم',phone:'+966500000012',company:'رشفة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:05:00.000Z'},
+      {id:'c3',eventId:'cafe',name:'وليد الشريف',phone:'+966500000013',company:'محامص الوادي',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:10:00.000Z'},
+      {id:'c4',eventId:'cafe',name:'أحمد باوزير',phone:'+966500000014',company:'مقهى المدار',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:15:00.000Z'},
+      {id:'c5',eventId:'cafe',name:'سارة العمري',phone:'+966500000015',company:'قهوة الساحة',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:20:00.000Z'},
+      {id:'cw1',eventId:'cafe',name:'مازن الشمري',phone:'+966500000016',company:'',city:'جدة',status:'waitlist',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:30:00.000Z'},
+      {id:'cw2',eventId:'cafe',name:'تركي المطيري',phone:'+966500000017',company:'مقهى بوابة',city:'مكة',status:'waitlist',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:35:00.000Z'},
+      {id:'cw3',eventId:'cafe',name:'هند القحطاني',phone:'+966500000018',company:'',city:'جدة',status:'waitlist',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T11:40:00.000Z'},
+
+      {id:'d1',eventId:'course',name:'عبدالله صالح',phone:'+966500000021',company:'مطاعم واجهة',city:'مكة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T12:00:00.000Z'},
+      {id:'d2',eventId:'course',name:'بدر العوفي',phone:'+966500000022',company:'',city:'جدة',status:'paid',paymentDeadline:null,paymentUrl:'',createdAt:'2026-09-01T12:10:00.000Z'}
+    ]
+  };
 
   // Load the layout layer used by the published page.
   const layout = document.createElement('link');
   layout.rel = 'stylesheet';
-  layout.href = 'assets/overrides.css?v=3';
+  layout.href = 'assets/overrides.css?v=4';
   document.head.appendChild(layout);
 
-  // One-time reset of the old prototype seed so the six new demo events appear.
+  // One-time demo migration. This intentionally refreshes the prototype examples once.
   if (!localStorage.getItem(MIGRATION_KEY)) {
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(demoState));
     localStorage.setItem(MIGRATION_KEY, '1');
   }
 
   const style = document.createElement('style');
   style.textContent = `
     .eyebrow::before{display:none!important}
-    .naif-footer-identity{border-right:1px solid rgba(255,255,255,.13);padding-right:22px;display:grid;gap:9px;align-items:center}
-    .naif-footer-main{display:flex;align-items:center;gap:10px;min-width:0}
-    .naif-footer-main img{width:116px!important;height:48px!important;object-fit:contain!important;object-position:center!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;box-shadow:none!important}
-    .naif-footer-main strong{font-size:12px;color:#fff;font-weight:700}
-    .naif-footer-social{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-    .naif-footer-social>strong{font-size:10px;color:#dcc681;margin-left:3px;direction:ltr}
-    .naif-footer-social a{width:28px;height:28px;border:1px solid rgba(255,255,255,.14);border-radius:9px;display:grid;place-items:center;color:#dbe5e4;background:rgba(255,255,255,.035);transition:.16s ease}
-    .naif-footer-social a:hover{background:#fff;color:#132f32;transform:translateY(-1px)}
-    .naif-footer-social svg{width:14px;height:14px;fill:currentColor}
-    .suggestion-card-icon{width:42px!important;height:42px!important;min-width:42px!important;border-radius:13px!important;display:grid!important;place-items:center!important;background:#eef5f4!important;color:#1f4649!important;font-size:0!important}
-    .suggestion-card-icon svg{width:22px!important;height:22px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important}
-    .riyal-money{display:inline-flex;align-items:center;gap:.26em;direction:ltr;white-space:nowrap}
+    .naif-footer-identity{border-right:1px solid rgba(255,255,255,.13);padding-right:18px;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:7px!important;min-width:210px!important;width:auto!important}
+    .naif-footer-main{display:flex!important;align-items:center!important;gap:8px!important;min-width:0!important}
+    .naif-footer-main img{width:88px!important;height:36px!important;object-fit:contain!important;object-position:center!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;box-shadow:none!important;filter:brightness(0) invert(1)!important}
+    .naif-footer-main strong{font-size:11px!important;color:#fff!important;font-weight:700!important;white-space:nowrap!important}
+    .naif-footer-social{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:6px!important;flex-wrap:nowrap!important;width:max-content!important;max-width:100%!important}
+    .naif-footer-social>strong{font-size:9px!important;color:#dcc681!important;margin:0 0 0 3px!important;direction:ltr!important;white-space:nowrap!important}
+    .naif-footer-social a{flex:0 0 27px!important;width:27px!important;height:27px!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:8px!important;display:grid!important;place-items:center!important;color:#fff!important;background:rgba(255,255,255,.04)!important;transition:.16s ease!important;padding:0!important}
+    .naif-footer-social a:hover{background:#fff!important;color:#132f32!important;transform:translateY(-1px)!important}
+    .naif-footer-social svg{width:13px!important;height:13px!important;fill:currentColor!important}
+    .suggestion-card-icon{width:40px!important;height:40px!important;min-width:40px!important;border-radius:12px!important;display:grid!important;place-items:center!important;background:#eef5f4!important;color:#1f4649!important;font-size:0!important}
+    .suggestion-card-icon svg{width:21px!important;height:21px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+    .riyal-money{display:inline-flex;align-items:center;gap:.25em;direction:ltr;white-space:nowrap}
     .riyal-symbol{display:inline-block;width:.72em;height:.82em;flex:0 0 .72em;background:currentColor;-webkit-mask:url('assets/saudi-riyal-symbol.svg') center/contain no-repeat;mask:url('assets/saudi-riyal-symbol.svg') center/contain no-repeat}
     .riyal-value{font-variant-numeric:tabular-nums}
-    @media(max-width:760px){.naif-footer-identity{border-right:0;padding-right:0;border-top:1px solid rgba(255,255,255,.1);padding-top:13px}.naif-footer-main img{width:100px!important;height:42px!important}}
+    .card-participants-preview{margin-top:13px;padding:10px 11px;border-radius:13px;background:#f7faf9;border:1px solid #e6edec;display:grid;gap:7px}
+    .card-participants-preview>span{font-size:11px;color:#6b7b7e;font-weight:700}
+    .card-participants-names{display:flex;flex-wrap:wrap;gap:5px}.card-participants-names b{font-size:10px;font-weight:600;background:#fff;border:1px solid #dfe7e6;border-radius:999px;padding:3px 8px;color:#35565a}
+    .card-waitlist-note{margin-top:11px;padding:8px 10px;border-radius:11px;background:#fff5df;color:#806622;font-size:11px;font-weight:700}
+    @media(max-width:760px){.naif-footer-identity{border-right:0!important;padding-right:0!important;border-top:1px solid rgba(255,255,255,.1)!important;padding-top:12px!important;min-width:0!important}.naif-footer-main img{width:82px!important;height:34px!important}.naif-footer-social{flex-wrap:nowrap!important}}
   `;
   document.head.appendChild(style);
 
-  // Naif identity: same treatment as tawassu_branch, no photo and no circle.
+  // Naif identity: small, white, no photo, no circle; social icons in one row.
   const naif = document.querySelector('.naif-signature');
   if (naif) {
     naif.className = 'naif-signature naif-footer-identity';
@@ -56,7 +92,7 @@
       </div>`;
   }
 
-  // Compact "اقترح مناسبة" card with a calendar-plus icon; no oversized modal icon.
+  // Compact "اقترح مناسبة" card with a clear calendar-plus icon.
   const suggestion = document.querySelector('.suggestion-card');
   if (suggestion) {
     const icon = suggestion.querySelector('.suggestion-card-icon');
@@ -77,7 +113,45 @@
   const headingText = document.querySelector('.section-heading p');
   if (headingText) headingText.textContent = 'اختر المناسبة وسجل مقعدك مباشرة.';
   const version = document.querySelector('.footer-bottom span:last-child');
-  if (version) version.textContent = 'الإصدار 0.3.0';
+  if (version) version.textContent = 'الإصدار 0.4.0';
+
+  function getState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch { return demoState; }
+  }
+  function getEvent(id) { return (getState().events || []).find(item => item.id === id); }
+  function registrationsFor(id) { return (getState().registrations || []).filter(item => item.eventId === id); }
+  function availableSeats(event) {
+    const occupied = registrationsFor(event.id).filter(item => ['paid','pending_payment'].includes(item.status)).length;
+    return Math.max(0, Number(event.capacity || 0) - occupied);
+  }
+  function waitlistCount(id) { return registrationsFor(id).filter(item => item.status === 'waitlist').length; }
+  function formatDate(value) {
+    return new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(`${value}T12:00:00`));
+  }
+  function formatTime(value) {
+    const [h,m] = String(value).split(':').map(Number);
+    return new Intl.DateTimeFormat('ar-SA-u-nu-latn',{hour:'numeric',minute:'2-digit'}).format(new Date(2026,0,1,h,m));
+  }
+  function formatNumber(value) { return new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(Number(value || 0)); }
+  function shareUrl(event) { return event.sharePath ? `${BASE_URL}${event.sharePath}` : `${BASE_URL}?event=${encodeURIComponent(event.id)}`; }
+
+  // WhatsApp text uses Unicode escapes to avoid damaged emoji/replacement characters.
+  document.addEventListener('click', event => {
+    const button = event.target.closest?.('[data-share-event],[data-admin-share]');
+    if (!button) return;
+    const id = button.getAttribute('data-share-event') || button.getAttribute('data-admin-share');
+    const item = getEvent(id);
+    if (!item) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const available = availableSeats(item);
+    const wait = waitlistCount(item.id);
+    const seatLine = available > 0 ? `المقاعد المتاحة: ${available}` : `المقاعد مكتملة${wait ? ` · قائمة الانتظار: ${wait}` : ''}`;
+    const priceLine = Number(item.price || 0) === 0 ? 'مجاني' : `${formatNumber(item.price)} ريال`;
+    const text = `*${item.title}*\n\n${item.description}\n\n\uD83D\uDCC5 ${formatDate(item.date)}\n\u23F0 ${formatTime(item.start)} إلى ${formatTime(item.end)}\n\uD83D\uDCCD ${item.venue} · ${item.city}\n\uD83D\uDCB3 ${priceLine}\n\uD83C\uDF9F\uFE0F ${seatLine}\n\nالتسجيل والتفاصيل:\n${shareUrl(item)}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  }, true);
 
   function applyRiyal(root = document.body) {
     if (!root) return;
@@ -108,23 +182,55 @@
     });
   }
 
+  function decorateCards() {
+    const state = getState();
+    document.querySelectorAll('#eventsGrid .event-card[data-event-card]').forEach(card => {
+      const id = card.getAttribute('data-event-card');
+      const item = (state.events || []).find(e => e.id === id);
+      if (!item) return;
+      card.querySelectorAll('.card-participants-preview,.card-waitlist-note').forEach(el => el.remove());
+      const regs = (state.registrations || []).filter(r => r.eventId === id);
+      const confirmed = regs.filter(r => r.status === 'paid');
+      const wait = regs.filter(r => r.status === 'waitlist').length;
+      const actions = card.querySelector('.event-card-actions');
+      if (!actions) return;
+      if (item.showParticipants && confirmed.length) {
+        const preview = document.createElement('div');
+        preview.className = 'card-participants-preview';
+        const names = confirmed.slice(0,4).map(r => `<b>${String(r.name).replace(/[&<>"']/g,'')}</b>`).join('');
+        preview.innerHTML = `<span>من المشاركين المؤكدين</span><div class="card-participants-names">${names}${confirmed.length>4?`<b>+${confirmed.length-4}</b>`:''}</div>`;
+        actions.before(preview);
+      }
+      if (availableSeats(item) === 0 && wait) {
+        const note = document.createElement('div');
+        note.className = 'card-waitlist-note';
+        note.textContent = `اكتملت المقاعد · ${wait} في قائمة الانتظار`;
+        actions.before(note);
+      }
+    });
+  }
+
   applyRiyal();
-  const observer = new MutationObserver(records => records.forEach(record => record.addedNodes.forEach(node => {
-    if (node.nodeType === Node.TEXT_NODE) applyRiyal(node.parentElement);
-    if (node.nodeType === Node.ELEMENT_NODE) applyRiyal(node);
-  })));
+  const observer = new MutationObserver(records => {
+    records.forEach(record => record.addedNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) applyRiyal(node.parentElement);
+      if (node.nodeType === Node.ELEMENT_NODE) applyRiyal(node);
+    }));
+    if (document.querySelector('#eventsGrid .event-card')) decorateCards();
+  });
   observer.observe(document.body, {childList:true, subtree:true});
 
   const script = document.createElement('script');
-  script.src = 'assets/app-v2.js?v=3';
+  script.src = 'assets/app-v2.js?v=4';
   script.defer = true;
   script.onload = () => setTimeout(() => {
     applyRiyal();
-    if (!document.querySelector('#eventsGrid .event-card') && !sessionStorage.getItem('rcoa_demo_reload_v3')) {
-      sessionStorage.setItem('rcoa_demo_reload_v3', '1');
-      localStorage.removeItem(STORAGE_KEY);
+    decorateCards();
+    if (!document.querySelector('#eventsGrid .event-card') && !sessionStorage.getItem('rcoa_demo_reload_v4')) {
+      sessionStorage.setItem('rcoa_demo_reload_v4', '1');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(demoState));
       location.reload();
     }
-  }, 150);
+  }, 180);
   document.body.appendChild(script);
 })();
